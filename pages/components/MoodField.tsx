@@ -18,15 +18,19 @@ function PositionField() {
           <SiApachespark className="me-5" size={40} onClick={positionSubmitted}/>
           </div>
       ) : (
-          <GrBeacon className="me-5 animate-bounce" size={40} onClick={positionSubmitted}/>
+          <GrBeacon className="me-5 animate-bounce" size={40}/>
       )
     )
   }
 
+  function updateFlag() {
+    setIconActive(!iconActive);
+  }
+
   async function positionSubmitted(event) {
 
-    // Reset flag
-    setIconActive(!iconActive);
+    setIconActive(false);
+
     try {
     const response = await fetch('/api/hello', {
       method: "POST",
@@ -40,17 +44,21 @@ function PositionField() {
     
     // Validate API call was succesfully made.
     if (response.status !== 200) {
+      setIconActive(true);
       throw data.error || new Error(`Request failed with status ${response.status}`)
     }
 
     setCollapse(data.result);
+    setIconActive(true);
     setPosition("");
 
       } catch (error) {
 
         // Additional error handling beyond unsucessful api call
+        setIconActive(true);
         console.error(error);
         alert(error.message);
+        
       }
     }
 

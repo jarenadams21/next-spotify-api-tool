@@ -7,7 +7,7 @@ function PositionField() {
   
   const [position, setPosition] = useState("");
   const [collapse, setCollapse] = useState("init");
-  const [iconActive, setIconActive] = useState(false);
+  const [iconActive, setIconActive] = useState(true);
 
   function Buttonly() {
   
@@ -48,7 +48,12 @@ function PositionField() {
       throw data.error || new Error(`Request failed with status ${response.status}`)
     }
 
-    setCollapse(data.result);
+    const recommendationsArray = data.result.split(",");
+    let recommendations = "";
+
+    recommendationsArray.forEach(element => recommendations += (element + " "));
+
+    setCollapse(recommendations);
     setIconActive(true);
     setPosition("");
 

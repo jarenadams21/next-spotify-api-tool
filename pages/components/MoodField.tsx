@@ -27,18 +27,32 @@ function PositionField() {
 
     // Reset flag
     setIconActive(!iconActive);
-    const response = await fetch('/api/generate', {
+    try {
+    const response = await fetch('/api/hello', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify( { position: position })
-    })
+      body: JSON.stringify( { position: position }),
+    });
 
     const data = await response.json();
-    console.log(data);
+    
+    // Validate API call was succesfully made.
+    if (response.status !== 200) {
+      throw data.error || new Error(`Request failed with status ${response.status}`)
+    }
 
+    setCollapse(data.result);
+    setPosition("");
+
+      } catch (error) {
+
+        // Additional error handling beyond unsucessful api call
+        console.error(error);
+        alert(error.message);
       }
+    }
 
 
 

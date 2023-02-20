@@ -74,7 +74,7 @@ function PositionField() {
 <div className="mt-5 mb-5 d-flex flex-column">
   
   <label htmlFor="position"
-   className="block text-4xl font-sans text-green-700 d-flex justify-content-center">
+   className="block text-4xl text-green-700 d-flex justify-content-center">
     
     Position
   </label>

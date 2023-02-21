@@ -8,7 +8,6 @@ const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
 
 
 function PositionMainPage() {
-
   //Spotify
   const [searchInput, setSearchInput] = useState("");
   const [accessToken, setAccessToken] = useState("");
@@ -16,6 +15,7 @@ function PositionMainPage() {
 
 
   useEffect(() => {
+
     // API Access Token
     var authParameters = {
       method: 'POST',

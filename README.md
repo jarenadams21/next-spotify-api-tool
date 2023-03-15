@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-TODO: Fix Spotify Auth, Spotify Dashboard on Main pagE!
+TODO: Fix Spotify Auth & Firebase login, Spotify Dashboard on Main pagE!
 # spotify-API-tool
 Tool that leverages various APIs for a fun experience
 

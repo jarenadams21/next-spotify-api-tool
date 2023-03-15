@@ -6,10 +6,17 @@ Tool that leverages various APIs for a fun experience
 
 * Base working application developed by following "Building a Spotify API Searcher in React" by Cooper Codes
 
-# Current features
+## Current features
   1. Search for an artist's complete album discography available on Spotify
   2. Receive 3 song recommendations based on your current position in time (mood, location, etc)
+  
+## AI Models In Use
+* OpenAI's text-davinci-003
+  
 
+
+<br>
+<br>
 
 ## Getting Started
 
